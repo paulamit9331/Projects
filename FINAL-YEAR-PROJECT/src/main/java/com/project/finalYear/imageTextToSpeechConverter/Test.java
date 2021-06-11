@@ -13,6 +13,5 @@ public class Test {
             Process process = new Process();
             new Thread(process::startProcess).start();
         });
-        Text.saveTextFileFromImageFile();
     }
 }
