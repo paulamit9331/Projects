@@ -1,15 +1,17 @@
 package com.project.finalYear.imageTextToSpeechConverter;
 
-import com.project.finalYear.imageTextToSpeechConverter.imageCapture.Process;
-import com.project.finalYear.imageTextToSpeechConverter.imageToText.Text;
+import com.project.finalYear.imageTextToSpeechConverter.capture.Process;
+import com.project.finalYear.imageTextToSpeechConverter.convert.Text;
+import nu.pattern.OpenCV;
 import org.opencv.core.Core;
 
-import java.awt.EventQueue;
+import java.awt.*;
 
 public class Test {
+
     public static void main(String[] args) {
-        System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-        EventQueue.invokeLater(()-> {
+        OpenCV.loadLocally();
+        EventQueue.invokeLater(() -> {
             Process process = new Process();
             new Thread(process::startProcess).start();
         });
